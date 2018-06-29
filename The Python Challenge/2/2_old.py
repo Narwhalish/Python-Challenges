@@ -13,7 +13,12 @@ encoded = str(mess)[5:-4]
 unique = []
 
 for sample in encoded:
-    count = encoded.count(sample)
+    count = 0
+    for n, compare in enumerate(encoded):
+            if sample == compare:
+                count += 1
+            if count == 2:
+                break
     if count != 1:
         encoded = [ltr for ltr in encoded if ltr != sample]
     else:
